@@ -1,27 +1,20 @@
 import random
 
-# r > s , s > p , p > r
+def rps_game():
 
-user = input("Type 'r' for rock, 'p' for paper, 's' for scissors.")
-computer = random.choice(["r", "p", "s"])
+    user = input("Type 'r' for rock, 'p' for paper, 's' for scissors.")
+    computer = random.choice(["r", "p", "s"])
+        
+    if user == computer:
+        return "It's a tie!"
 
-if user == computer:
-    print("Tie!")
+    if winner(user, computer):
+        return "You won!"
 
-elif user == "r":
-    if computer == "p":
-        print("Computer wins!")
-    else:
-        print("User wins!")
+    return "Computer won!"
 
-elif user == "p":
-    if computer == "s":
-        print("Computer wins!")
-    else:
-        print("User wins!")
-
-else:
-    if computer == "r":
-        print("Computer wins!")
-    else:
-        print("User wins!")
+def winner(player, opponent):
+    if (player == "r" and opponent == "s") or (player == "p" and opponent == "r") or (player == "s"  and opponent == "p"):
+        return True
+    
+print(rps_game())
