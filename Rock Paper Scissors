@@ -1,0 +1,27 @@
+import random
+
+# r > s , s > p , p > r
+
+user = input("Type 'r' for rock, 'p' for paper, 's' for scissors.")
+computer = random.choice(["r", "p", "s"])
+
+if user == computer:
+    print("Tie!")
+
+elif user == "r":
+    if computer == "p":
+        print("Computer wins!")
+    else:
+        print("User wins!")
+
+elif user == "p":
+    if computer == "s":
+        print("Computer wins!")
+    else:
+        print("User wins!")
+
+else:
+    if computer == "r":
+        print("Computer wins!")
+    else:
+        print("User wins!")
